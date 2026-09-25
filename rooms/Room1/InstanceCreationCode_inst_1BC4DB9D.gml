@@ -1,0 +1,1 @@
+alarm[3] = scratch_wait(0.55)

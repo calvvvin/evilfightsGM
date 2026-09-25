@@ -1,0 +1,10 @@
+index = 0;
+shake = 7
+flip = 1; //too stupid to do this right
+disappear = false;
+show = false;
+alarm[0] = 200;
+alarm[1] = 5;
+alarm[3] = 1;
+image_alpha = 0.8;
+flash_alpha = 0.8;
