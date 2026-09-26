@@ -6,5 +6,6 @@ punchcooldown = 0;
 state = "normal";
 wait = 0;
 anims = {
-land : 0,	
+land : 0,
+punch : 0,
 }

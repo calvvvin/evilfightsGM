@@ -2,7 +2,7 @@ function scr_player_normal(){
 
 	// can you tell i mod pizza tower yet
 	var move = key_right + -key_left
-	image_speed = 0.15
+	image_speed = anims.punch ? 0.15 : 0.2
 
 	if (move != 0)
 	{
@@ -22,7 +22,8 @@ function scr_player_normal(){
 	if (key_jump && !wait)
 	{
 		wait = scratch_wait(0.07);
-		sprite_index = spr_player_jumpstart;
+		if (!anims.punch)
+			sprite_index = spr_player_jumpstart;
 		anims.land = false;
 	}
 	else if (wait)
@@ -46,7 +47,8 @@ function scr_player_normal(){
 			else
 			{
 				state = "jump";
-				sprite_index = spr_player_jump;
+				if (!anims.punch)
+					sprite_index = spr_player_jump;
 				vsp = -17;
 			}
 		}
