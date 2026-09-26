@@ -1,6 +1,8 @@
 scr_collision();
 scr_input_update();
-scr_state(state);
+
+var statefunc = asset_get_index($"scr_player_{string_lower(state)}")
+statefunc()
 
 if (state == "normal" || state == "jump")
 {
