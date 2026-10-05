@@ -12,13 +12,13 @@ function scr_player_jump(){
 		movespeed -= 0.5;
 	}
 	
-	if (vsp > 0 && sprite_index != spr_player_punch)
+	if (vsp > 0 && !anims.punch)
 		sprite_index = spr_player_fall;
 	
 	if (grounded)
 	{
 		wait = 5;
-		if (sprite_index != spr_player_punch)
+		if (!anims.punch)
 			sprite_index = spr_player_jumpstart;
 		anims.land = true;
 		state = "normal";

@@ -3,6 +3,8 @@ scr_input_update();
 grav = 0.5;
 movespeed = 0;
 punchcooldown = 0;
+dashpunchduration = 0;
+dashpunchdir = 0;
 state = "normal";
 wait = 0;
 anims = {
