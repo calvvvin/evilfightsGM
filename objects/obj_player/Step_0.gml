@@ -44,17 +44,38 @@ if (grounded)
 	else if (movespeed != 0 || !grounded)
 		anims.idle = false;
 	
+	if (anims.idle && key_down_pressed)
+	{
+		idlewait = scratch_wait(0.167);
+	}
+	
 	if (anims.idle)
 	{
-		if (idlewait-- > 0)
+		if (key_down)
 		{
-			sprite_index = spr_player_intoidle;
+			if (idlewait-- > 0)
+			{
+				sprite_index = spr_player_intocrouch;
+			}
+			else
+			{
+				sprite_index = spr_player_idle;
+				//show_debug_message("liar")
+				idlewait = 0;
+			}
 		}
 		else
 		{
-			sprite_index = spr_player_idle;
-			//show_debug_message("liar")
-			idlewait = 0;
+			if (idlewait-- > 0)
+			{
+				sprite_index = spr_player_intoidle;
+			}
+			else
+			{
+				sprite_index = spr_player_idle;
+				//show_debug_message("liar")
+				idlewait = 0;
+			}
 		}
 	}
 	
